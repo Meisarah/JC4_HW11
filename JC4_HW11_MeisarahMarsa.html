@@ -1,0 +1,130 @@
+<!DOCTYPE>
+<Head>
+    <title>Pertemuan 7</title>  
+</Head>
+<body>
+        <form id="form" action="" method="post" name="form">
+        <fieldset>
+            <legend>Data Diri</legend>
+            <p>
+                <label for="nama">Nama:</label>
+                <input type="text" id="nama" name="nm">  
+            <p>
+                <label for="usia">Usia:</label>
+                <input type="number" id="usia" name="u">                     
+            <p>
+                <label for="TTL">Tempat/tanggal Lahir:</label>
+                <input type="text" id="TTL1" name="TTL">
+                <input type="date" id="TTL2" name="TTL">
+            <p>
+                <label for="sex">Gender</label>
+                <input type="radio" id="sex1" name = "sex"  value = "Pria"> Pria
+                <input type="radio" id="sex2" name = "sex"  value = "Wanita"> Wanita
+            <p>
+                <label for="hp">Phone:</label>
+                <input type="number" id = "hp" name="hpn">
+            <p>
+                <label for="email">E-mail:</label>
+                <input type="email" id = "email" name="ema"> 
+        </fieldset>
+<br>
+        <fieldset>
+                <legend>Riwayat Pendidikan</legend>
+                <p>
+                <label for="rp"></label>
+                <table id="rp">
+                        <tr>
+                            <th>Pendidikan</th>
+                            <th>Nama Instansi</th>
+                            <th>Tahun Lulus</th>
+                        </tr>
+                        <tr>
+                            <td>SD</td>
+                            <td><input type="text" name="sd1"></td>
+                            <td><input type="text" name="sd2"></td> 
+                        </tr>
+                        <tr>
+                            <td>SMP</td>
+                            <td><input type="text" name="smp1"></td>
+                            <td><input type="text" name="smp2"></td> 
+                        </tr>
+                        <tr>
+                            <td>SMA/SMK</td>
+                            <td><input type="text" name="sma1"></td>
+                            <td><input type="text" name="sma2"></td> 
+                        </tr>
+                        <tr>
+                            <td>S1</td>
+                            <td><input type="text" name="s1"></td>
+                            <td><input type="text" name="s2"></td> 
+                        </tr>
+                    </table>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>Riwayat Pekerjaan</legend>
+            <p>
+                <label for="namaper">Nama Perusahaan:</label>
+                <input type="text" name="namaper">
+            <p>
+                <label for="lamabekerja">Lama Bekerja:</label>
+                <input type="text" name="lamabekerja"> tahun
+            <p>
+                <label for="posisi">Posisi:</label>
+                <input type="text" name="posisi"> 
+            </fieldset>
+            <br>
+            </form>
+    
+    <button onclick="fungsiKu()" id="klik">OK</button>
+    <table id = "table"></table>
+
+    <script>
+    function fungsiKu(){
+        let nama1 = document.form.nm.value;
+        let usia = document.form.u.value;
+        let hpn = document.form.hpn.value;
+        let email= document.form.ema.value;
+        let instansisd= document.form.sd1.value;
+        let tahunsd= document.form.sd2.value;
+        let instansismp= document.form.smp1.value;
+        let tahunsmp = document.form.smp2.value;
+        let instansisma = document.form.sma1.value;
+        let tahunsma = document.form.sma2.value;
+        let instansis1 = document.form.s1.value;
+        let tahuns1 = document.form.s2.value;
+        let namaperusahaan = document.form.namaper.value;
+        let lamabekerja = document.form.lamabekerja.value;
+        let posisi = document.form.posisi.value;
+       
+        let TTL1 = document.getElementById("TTL1").value;
+        let TTL2 = document.getElementById("TTL2").value;
+
+        let a = document.form.sex.value;
+        let b = '';
+            if (a=='Pria'){
+                b ="Pria"
+                }
+             else if (a=='Wanita'){
+                b ="Wanita"
+                }
+            else{b=''}
+
+        
+                document.getElementById("table").innerHTML = "<tr bgcolor=black>\
+        <td colspan=4><font color = white>Personal Data</font></td></tr>\
+    <tr><td>Nama</td><td>: "+nama1+"</td><tr><td>Tempat/Tgl lahir</td><td>: "+TTL1+"/"+TTL2+"</td>\
+    <tr><td>Gender</td><td>: "+b+"</td></tr><tr><td>Telepon</td><td>: "+hpn+"</td></tr>\
+    <tr><td>E-mail</td><td>: "+email+"</td></tr><tr bgcolor=black>\
+        <td colspan=4><font color=white>Riwayat Pendidikan</font></td></tr><tr>\
+        <td>SD</td><td>"+instansisd+"</td><td>Tahun Lulus: </td><td>"+tahunsd+"</td>\
+    <tr><td>SMP</td><td>"+instansismp+"</td><td>Tahun Lulus: </td><td>"+tahunsmp+"</td>\
+    <tr><td>SMA/SMK</td><td>"+instansisma+"</td><td>Tahun Lulus: </td><td>"+tahunsma+"</td>\
+    <tr><td>S1</td><td>"+instansis1+"</td><td>Tahun Lulus: </td><td>"+tahuns1+"</td>\
+    </tr><tr bgcolor=black><td colspan=4><font color=white>Riwayat Pekerjaan</font></td>\
+    <tr><td>Nama Perusahaan</td><td>Lama Bekerja</td><td>Posisi</td>\
+    <tr><td>"+namaperusahaan+"</td><td>"+lamabekerja+"</td><td>"+posisi+"</td></tr>"         
+        
+    }
+        </script>
+</body>
